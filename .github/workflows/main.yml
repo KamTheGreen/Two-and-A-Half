@@ -3,7 +3,7 @@ name: Deploy Next.js to Ubuntu Server
 on:
   push:
     branches:
-      - main
+      - main  # Change if using a different branch
 
 jobs:
   deploy:
@@ -17,4 +17,8 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            /home/michal/app/deploy.sh
+            cd /home/michal/strona
+            git pull origin main
+            npm install
+            npm run build
+            pm2 restart strona
