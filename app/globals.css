@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000; /* Set the foreground color to black */
 }
 
 @theme inline {
@@ -21,7 +21,7 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: #4782a2;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -33,52 +33,55 @@ body, html {
   font-family: 'Arial', sans-serif;
 }
 
-
 .login-container {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.85); /* Slightly transparent background */
   padding: 2rem;
   border-radius: 8px;
   width: 100%;
   max-width: 400px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Deep shadow for better contrast */
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-color: rgba(255, 255, 255, 0.8); /* White with transparency */
-  padding: 2rem;
+  padding: 1rem; /* Reduced padding for a more compact layout */
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.9); /* Light background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for separation */
   width: 100%;
-  max-width: 400px;
+  max-width: 400px; /* Width to fit the content */
   text-align: center;
+  color: #4782a2; /* Apply foreground color */
 }
 
 .login-form h2 {
   margin-bottom: 1rem;
+  color: #4782a2; /* Ensure heading follows the foreground color */
 }
 
-
 .login-form input {
-  padding: 10px;
+  padding: 12px;
   margin: 10px 0;
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 1rem;
+  width: 100%; /* Ensure full width for inputs */
+  color: #4782a2; /* Apply foreground color */
 }
 
 .login-form button {
   padding: 12px;
   background-color: #007bff;
-  color: white;
+  color: white; /* Keep the button text white */
   font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1.1rem;
+  margin-top: 10px; /* Added space between inputs and button */
 }
 
 .login-form button:hover {
@@ -88,11 +91,7 @@ body, html {
 .login-form p {
   margin-top: 10px;
   font-size: 0.9rem;
-}
-
-.login-form {
-  color: red;
-  margin-top: 10px;
+  color: #4782a2; /* Ensure paragraph follows the foreground color */
 }
 
 /* app/login/page.css */
@@ -114,12 +113,6 @@ body, html {
   width: 100%;
   max-width: 400px;
   text-align: center;
-}
-
-
-.error-message {
-  color: red;
-  font-size: 14px;
 }
 
 .login-form input:focus,
