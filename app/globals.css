@@ -84,7 +84,7 @@ body, html {
 /* app/login/page.css */
 
 .login-page {
-  background-image: url('/public/pic.jpg'); /* Make sure this is the correct path */
+  background-image: url('/pic.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
