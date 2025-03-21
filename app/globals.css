@@ -33,15 +33,6 @@ body, html {
   font-family: 'Arial', sans-serif;
 }
 
-.login-page {
-  background-image: url('/path-to-your-image.jpg'); /* Set your image here */
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .login-container {
   display: flex;
@@ -64,13 +55,6 @@ body, html {
   margin-bottom: 1rem;
 }
 
-.login-form input {
-  width: 100%;
-  padding: 0.8rem;
-  margin: 0.8rem 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
 
 .login-form button {
   width: 100%;
@@ -92,7 +76,33 @@ body, html {
   font-size: 0.9rem;
 }
 
-.login-form .error-message {
+.login-form {
   color: red;
   margin-top: 10px;
+}
+
+/* app/login/page.css */
+
+.login-page {
+  background-image: url('/public/pic.jpg'); /* Make sure this is the correct path */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+
+.error-message {
+  color: red;
+  font-size: 14px;
 }

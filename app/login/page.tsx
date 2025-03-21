@@ -1,5 +1,5 @@
 // app/login/page.tsx
-"use client"; // This tells Next.js that the component is client-side
+"use client";
 
 import { useState } from 'react';
 
