@@ -24,33 +24,35 @@ export default function LoginPage() {
     };
 
     return (
-        <div className="login-page">
-            <div className="login-container">
-                <div className="login-form">
-                    <h2>Login</h2>
-                    <form onSubmit={handleLogin}>
-                        <input
-                            type="text"
-                            placeholder="Username"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                            required
-                        />
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
-                        {error && <p className="error-message">{error}</p>}
-                        <button type="submit">Login</button>
-                    </form>
-                    <p>
-                        Don't have an account? <a href="/register">Register</a>
-                    </p>
+        <>
+            <div className="login-page">
+                <div className="login-container">
+                    <div className="login-form">
+                        <h2>Login</h2>
+                        <form onSubmit={handleLogin}>
+                            <input
+                                type="text"
+                                placeholder="Username"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                required
+                            />
+                            <input
+                                type="password"
+                                placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                            {error && <p className="error-message">{error}</p>}
+                            <button type="submit">Login</button>
+                        </form>
+                        <p>
+                            Don't have an account? <a href="/register">Register</a>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
