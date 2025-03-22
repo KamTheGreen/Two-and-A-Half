@@ -32,14 +32,14 @@ export default function LoginPage() {
                         <form onSubmit={handleLogin}>
                             <input
                                 type="text"
-                                placeholder="Username"
+                                placeholder="Nazwa Użytkownika"
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                                 required
                             />
                             <input
                                 type="password"
-                                placeholder="Password"
+                                placeholder="Hasło"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
@@ -48,7 +48,7 @@ export default function LoginPage() {
                             <button type="submit">Login</button>
                         </form>
                         <p>
-                            Don't have an account? <a href="/register">Register</a>
+                            Nie masz jeszcze konta? <a href="/register">Zarejestruj sie</a>
                         </p>
                     </div>
                 </div>
