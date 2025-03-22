@@ -2,7 +2,15 @@ import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import bcrypt from 'bcrypt'
 
+
 export async function POST(request: Request) {
+    const cookieHeader = request.headers.get('cookie') || ''
+    const hasSession = cookieHeader.includes('session=')
+
+    if (hasSession) {
+        return NextResponse.redirect(new URL('/dashboard', request.url))
+    }
+
     const body = await request.json()
     const { username, password } = body
 
