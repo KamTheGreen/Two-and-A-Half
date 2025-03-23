@@ -15,13 +15,13 @@ export async function POST(request: Request) {
     const { username, password } = body
 
     if (!username || !password) {
-        return NextResponse.json({ error: 'Missing username or password' }, { status: 400 })
+        return NextResponse.json({ error: 'Brakująca nazwa użytkownika lub hasło' }, { status: 400 })
     }
 
     const existingUser = await prisma.user.findUnique({ where: { username } })
 
     if (existingUser) {
-        return NextResponse.json({ error: 'Username already exists' }, { status: 409 })
+        return NextResponse.json({ error: 'Ta nazwa użytkownika już istnieje' }, { status: 409 })
     }
 
     const hashedPassword = await bcrypt.hash(password, 10)
@@ -33,5 +33,5 @@ export async function POST(request: Request) {
         },
     })
 
-    return NextResponse.json({ message: 'User created successfully', userId: user.id })
+    return NextResponse.json({ message: 'Utworzono użytkownika', userId: user.id })
 }

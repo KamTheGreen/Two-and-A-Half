@@ -8,24 +8,24 @@ export async function POST(request: Request) {
     const { username, password } = body;
 
     if (!username || !password) {
-        return NextResponse.json({ error: 'Missing credentials' }, { status: 400 });
+        return NextResponse.json({ error: 'Wypełnij formularz' }, { status: 400 });
     }
 
     const user = await prisma.user.findUnique({ where: { username } });
 
     if (!user) {
-        return NextResponse.json({ error: 'User not found' }, { status: 404 });
+        return NextResponse.json({ error: 'Nie znaleziono użytkownika' }, { status: 404 });
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
 
     if (!isPasswordValid) {
-        return NextResponse.json({ error: 'Invalid password' }, { status: 401 });
+        return NextResponse.json({ error: 'Błędne hasło' }, { status: 401 });
     }
 
     const token = generateToken({ userId: user.id, username: user.username });
 
-    const response = NextResponse.json({ message: 'Login successful' });
+    const response = NextResponse.json({ message: 'Zalogowano poprawnie' });
 
     response.cookies.set('auth-token', token, {
         httpOnly: true,
