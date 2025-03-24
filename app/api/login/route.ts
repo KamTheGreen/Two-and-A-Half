@@ -27,7 +27,7 @@ export async function POST(request: Request) {
 
     const response = NextResponse.json({ message: 'Zalogowano poprawnie' });
 
-    response.cookies.set('auth-token', token, {
+    response.cookies.set('auth-token', String(token), {
         httpOnly: true,
         sameSite: 'lax',
         secure: false,
